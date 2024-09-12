@@ -12,6 +12,9 @@ export default {
       colors: {
         gray: '#9495A5',
         lightGray: '#F2F2F2',
+        gray2: '#979797',
+        gray3: '#E3E4F1',
+        purple: '#494C6B',
       },
     },
   },
