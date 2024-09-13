@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CrossIcon = ({ fill = '#494C6B', ...props }) => {
+const IconCross = ({ fill = '#494C6B', ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ const CrossIcon = ({ fill = '#494C6B', ...props }) => {
   );
 };
 
-export default CrossIcon;
+export default IconCross;
