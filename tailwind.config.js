@@ -15,6 +15,7 @@ export default {
         gray2: '#979797',
         gray3: '#E3E4F1',
         purple: '#494C6B',
+        blue: '#3A7CFD',
       },
     },
   },
