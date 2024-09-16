@@ -5,7 +5,7 @@ import IconCheck from './icons/IconCheck';
 const TodoItem = ({ todo, removeTodo, updateTodo }) => {
   const { id, title, completed } = todo;
   const theme = localStorage.getItem('theme');
-  console.log(theme);
+
   return (
     <article className="py-5 px-6 gap-[24px] flex border-b-gray3  border-b dark:border-b-purple3">
       <button

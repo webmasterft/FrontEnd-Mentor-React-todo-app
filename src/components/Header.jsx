@@ -6,6 +6,7 @@ const inicialStateDarkMode = localStorage.getItem('theme') === 'dark';
 
 const Header = () => {
   const [darkmode, setDarkMode] = useState(inicialStateDarkMode);
+
   useEffect(() => {
     darkmode
       ? (document.documentElement.classList.add('dark'),

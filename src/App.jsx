@@ -4,45 +4,31 @@ import TodoList from './components/TodoList';
 import TodoComputed from './components/TodoComputed';
 import TodoCreate from './components/TodoCreate';
 import TodoFilter from './components/TodoFilter';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const initialTodos = [
-  {
-    id: 1,
-    title: 'Learn Next',
-    completed: true,
-  },
-  {
-    id: 2,
-    title: 'Learn Svelte',
-    completed: true,
-  },
-  {
-    id: 3,
-    title: 'Learn Angular',
-    completed: false,
-  },
-  {
-    id: 4,
-    title: 'Learn Vue',
-    completed: false,
-  },
-];
+const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
   const [filter, setFilter] = useState('all');
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   const createTodo = title => {
     const newTodo = {
       id: Date.now(),
       title,
       completed: false,
     };
+
     setTodos([...todos, newTodo]);
   };
   const removeTodo = id => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
+
   const updateTodo = id => {
     setTodos(
       todos.map(todo =>
