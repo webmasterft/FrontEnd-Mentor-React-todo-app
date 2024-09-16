@@ -57,6 +57,7 @@ function App() {
     setTodos(todos.filter(todo => !todo.completed));
   };
   const changeFilter = filter => setFilter(filter);
+
   const filterTodos = () => {
     switch (filter) {
       case 'all':
@@ -66,7 +67,7 @@ function App() {
       case 'completed':
         return todos.filter(todo => todo.completed);
       default:
-        return todos; // Default to returning all todos if filter is not recognized
+        return todos;
     }
   };
 

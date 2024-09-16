@@ -1,6 +1,6 @@
 import React from 'react';
 
-const IconCross = ({ fill = '#494C6B', ...props }) => {
+const IconCross = ({ fill, ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

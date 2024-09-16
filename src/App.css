@@ -8,7 +8,11 @@ body {
   font-size: 16px;
   font-style: normal;
 }
-
-.check-gradient {
-  background: #000;
+.dark {
+  body {
+    background: #171823 url('./images/bg-desktop-dark.jpg') no-repeat center;
+    background-position: top;
+    background-size: cover;
+    background-size: 100% 300px;
+  }
 }
