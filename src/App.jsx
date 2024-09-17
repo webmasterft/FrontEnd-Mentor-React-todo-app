@@ -57,6 +57,26 @@ function App() {
     }
   };
 
+  const reorder = (list, startIndex, endIndex) => {
+    const result = [...list];
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+  };
+
+  const handleDragEnd = result => {
+    const { destination, source } = result;
+    if (!destination) return;
+    if (
+      source.index === destination.index &&
+      source.droppableId === destination.droppableId
+    )
+      return;
+
+    setTodos(prevTasks => reorder(prevTasks, source.index, destination.index));
+  };
+
   return (
     <>
       <div className="container mx-auto max-w-[540px]">
@@ -67,6 +87,7 @@ function App() {
             todos={filterTodos()}
             removeTodo={removeTodo}
             updateTodo={updateTodo}
+            handleDragEnd={handleDragEnd}
           />
           <TodoComputed
             computedItemsLeft={computedItemsLeft}
